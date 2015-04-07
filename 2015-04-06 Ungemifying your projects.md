@@ -1,3 +1,7 @@
+![fit](test-slide.jpg)
+
+---
+
 # [fit] Ungemifying your projects
 
 ### (one repo to rule them all)
@@ -71,6 +75,8 @@ GIT
       activesupport (~> 3.2.6)
 ```
 
+^ point out downside of the revision being mentioned
+
 --- 
 
 # Workflow
@@ -83,6 +89,8 @@ GIT
 bundle update mycompany-models
 ```
 
+^ *so* many times we typed `bundle update`
+
 ---
 
 # Downsides of gemifying
@@ -93,7 +101,9 @@ bundle update mycompany-models
 * Can forget about some pull requests
 
 ^ talk about confusion of multiple pull requests for one issue
-^ talk about tests failing in downstream projects because of model changes
+
+^ talk about tests/code failing in downstream projects because of model changes
+
 ^ talk about apps breaking because someone forgot to bump the model gem
 
 ---
@@ -104,13 +114,18 @@ Model
 Downstream Project
 ![inline, 150%](bump-model-gem.jpg)![inline, 50%](downstream-pull-request.jpg)
 
+^ two pull requests, 3 commits
+
+^ 5 commits if you count the merge commits
+
 ---
 
 # The Solution
 
 ---
 
-# [fit] One repo, multiple projects
+# One repo
+# Multiple projects
 
 --- 
 
@@ -126,7 +141,12 @@ README.md
 specs.sh # run all the tests!
 .gitignore
 .hound.yml
+
 ```
+
+^ specs.sh is what circle ci runs
+
+^ bonus: the hound config is shared between all projects
 
 ---
 
@@ -140,12 +160,14 @@ gem 'mycompany-models', path: '../mycompany-models'
 ```
 # Gemfile.lock in mycompany-api
 PATH
-  remote: ../myscompany-models
+  remote: ../mycompany-models
   specs:
     mycompany_models (1.6.11)
       activerecord (~> 4.2.0)
       activesupport (~> 4.2.0)
 ```
+
+^ point out that the revision hash isn't there anymore
 
 ---
 
@@ -155,7 +177,7 @@ PATH
 * No 'bumping' the model gem
 * Projects never accidentally use 'old' version of models
 * New developers don't WTF
-
+* Save GitHub $$$!
 
 ---
 
@@ -173,7 +195,7 @@ Three ways:
 
 Don't break the SHA1 hashes!
 
-Modifying history means that the SHA1 hash of the commit changes (rebase, commit --amend, etc.)
+Modifying history means that the SHA1 hash of the commit changes (rebase, commit --amend, etc.) -- let's avoid it!
 
 ---
 
@@ -206,6 +228,8 @@ Why stop at gems? Works just as well for SOA/Microservices!
 ^ mention why we don't put ansible/configuration management in there
 
 ^ google/facebook does it
+
+^ code splunking with git log contains all changes, not just that specific project
 
 ---
 
