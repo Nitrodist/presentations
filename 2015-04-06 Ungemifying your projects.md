@@ -4,6 +4,14 @@
 
 ---
 
+![inline, fit, original](the-score-logo-white-yellow.png)
+
+# Sportsball! Also eSports.
+
+### (we're hiring!)
+
+---
+
 let's talk about
 
 # [fit] MONORAILS
@@ -14,11 +22,12 @@ let's talk about
 
 A rails app that does *everything*
 
-1. The Website
-2. Background Jobs
-3. Search
-4. 3rd party service interaction
-5. Kitchen sink duties
+1. The website
+2. API
+3. Background jobs
+4. Search
+5. 3rd party service interaction
+6. Kitchen sink duties
 
 ![right, 150%](simpsons-mono-rail.jpg)
 
@@ -80,7 +89,124 @@ bundle update mycompany-models
 
 * Code changes between gemified project and downstream project are tied together
 * Multiple pull requests for the same issue!
+* Order of merging pull requests is important
+* Can forget about some pull requests
+
+^ talk about confusion of multiple pull requests for one issue
+^ talk about tests failing in downstream projects because of model changes
+^ talk about apps breaking because someone forgot to bump the model gem
+
+---
+
+Model
+![inline, left, 50%](model-pull-request.jpg)
+
+Downstream Project
+![inline, 150%](bump-model-gem.jpg)![inline, 50%](downstream-pull-request.jpg)
+
+---
+
+# The Solution
+
+---
+
+# [fit] One repo, multiple projects
+
+--- 
+
+# Directory structure
+
+```sh
+$ ls -al mycompany
+mycompany-api/
+mycompany-models/
+mycompany-search/
+circle.yml
+README.md
+specs.sh # run all the tests!
+.gitignore
+.hound.yml
+```
+
+---
+
+# The better code
+
+```
+# Gemfile in mycompany-api
+gem 'mycompany-models', path: '../mycompany-models'
+```
+
+```
+# Gemfile.lock in mycompany-api
+PATH
+  remote: ../myscompany-models
+  specs:
+    mycompany_models (1.6.11)
+      activerecord (~> 4.2.0)
+      activesupport (~> 4.2.0)
+```
+
+---
+
+# Benefits
+
+* One pull request per change
+* No 'bumping' the model gem
+* Projects never accidentally use 'old' version of models
+* New developers don't WTF
 
 
+---
+
+# How to
+
+Three ways:
+
+1. Don't gemify in the first place
+2. New git repo with code copied directly in
+3. New git repo with fancy history preserved (do this!)
+
+---
+
+# Preserve history
+
+Don't break the SHA1 hashes!
+
+Modifying history means that the SHA1 hash of the commit changes (rebase, commit --amend, etc.)
+
+---
+
+# High level steps
+
+1. Make new repo
+2. Add projects as remotes
+3. Checkout each project locally
+4. Move files into top-level directory called $project
+5. Merge in projects one-by-one
+6. Modify each Gemfile to use relative paths
+
+---
+
+# Code
+
+`http://bit.ly/1IGxkR8`
+
+[link](http://bit.ly/1IGxkR8)
 
 
+---
+
+# Going further
+
+Why stop at gems? Works just as well for SOA/Microservices!
+
+^ mention that features in SOA can ship all at 'once' now
+
+^ mention why we don't put ansible/configuration management in there
+
+^ google/facebook does it
+
+---
+
+# [fit] Questions?
