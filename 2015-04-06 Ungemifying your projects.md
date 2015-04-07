@@ -20,6 +20,8 @@ let's talk about
 
 # [fit] MONORAILS
 
+^ does anybody work with monorails?
+
 ---
 
 # What's a monorail?
@@ -51,6 +53,21 @@ A rails app that does *everything*
 Let's split up app into separate pieces!
 
 Models are usually the only thing needed in each component, so let's just gemify that.
+
+
+--- 
+
+# How gemification looks
+
+```
+downstream repo: mycompany-api
+downstream repo: mycompany-search
+upstream repo: mycompany-models
+```
+
+^ downstream repos load upstream repo through their Gemfiles
+
+^ downstream repos use the models from mycompany-models
 
 ---
 
@@ -95,7 +112,7 @@ bundle update mycompany-models
 
 # Downsides of gemifying
 
-* Code changes between gemified project and downstream project are tied together
+* Code changes between gemified projects and downstream projects are tied together
 * Multiple pull requests for the same issue!
 * Order of merging pull requests is important
 * Can forget about some pull requests
@@ -143,6 +160,8 @@ specs.sh # run all the tests!
 .hound.yml
 
 ```
+
+^ no submodules being used here
 
 ^ specs.sh is what circle ci runs
 
@@ -233,4 +252,18 @@ Why stop at gems? Works just as well for SOA/Microservices!
 
 ---
 
+
 # [fit] Questions?
+
+---
+
+Credit goes to
+
+* Luke Reeves
+* Scott Walkinshaw
+* Thuva Tharma
+* Nate Smith (actually wrote the shell script!)
+
+---
+
+# Thanks!
