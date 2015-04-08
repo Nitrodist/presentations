@@ -65,6 +65,8 @@ downstream repo: mycompany-search
 upstream repo: mycompany-models
 ```
 
+^ other languages can be accomodated with git submodules
+
 ^ downstream repos load upstream repo through their Gemfiles
 
 ^ downstream repos use the models from mycompany-models
@@ -227,6 +229,9 @@ Modifying history means that the SHA1 hash of the commit changes (rebase, commit
 5. Merge in projects one-by-one
 6. Modify each Gemfile to use relative paths
 
+
+^ Heroku remote repos if anyone is familiar with it
+
 ---
 
 # Code
@@ -267,3 +272,5 @@ Credit goes to
 ---
 
 # Thanks!
+
+@Nitrodist on Twitter
