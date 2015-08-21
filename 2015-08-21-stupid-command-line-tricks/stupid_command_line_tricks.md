@@ -15,7 +15,7 @@
 `ctrl-a -` go to beginning of line
 `ctrl-e -` go to end of line
 `ctrl-r -` search through history (hit ctrl-r to keep going)
-`ctrl-w -` delete word forward
+`ctrl-w -` delete word backward
 
 ---
 
