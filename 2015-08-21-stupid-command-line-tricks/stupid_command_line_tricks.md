@@ -2,6 +2,12 @@
 
 ---
 
+![inline, fit, original](the-score-logo-white-yellow.png)
+
+## Sportsball! Also eSports. And fantasy?
+
+---
+
 # Shell/bash/zsh
 
 ## emacs mode is default mode
@@ -260,8 +266,6 @@ ssh host-a ls -l /tmp/file_a.txt # run command on host-a
 
 Thanks!
 
+Sometimes I blog: markcampbell.me
+
 Twitter: @Nitrodist
-
-We're nerds, come work with us: 
-
-[http://mobile.thescore.com/careers/opportunities/](http://mobile.thescore.com/careers/opportunities/)
