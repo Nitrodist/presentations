@@ -22,17 +22,25 @@ Turn 1      Turn 2      Turn 3
 
 # Still life
 
-![inline 60%](https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Game_of_life_block_with_border.svg/600px-Game_of_life_block_with_border.svg.png)
+![inline 60%](600px-Game_of_life_block_with_border.svg.png)
+
+[source: wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Game_of_life_block_with_border.svg/600px-Game_of_life_block_with_border.svg.png)
 
 ---
 
 # 'Spinner'
 
-![inline 150%](https://upload.wikimedia.org/wikipedia/commons/9/95/Game_of_life_blinker.gif)
+![inline 150%](Game_of_life_blinker.gif)
+
+[source: wikipedia](https://upload.wikimedia.org/wikipedia/commons/9/95/Game_of_life_blinker.gif)
 
 ---
 
-# [gif of the game at scale](https://upload.wikimedia.org/wikipedia/commons/e/e5/Gospers_glider_gun.gif)
+# gif of the game at scale
+
+![inline](Gospers_glider_gun.gif)
+
+[source: wikipedia](https://upload.wikimedia.org/wikipedia/commons/e/e5/Gospers_glider_gun.gif)
 
 ---
 
