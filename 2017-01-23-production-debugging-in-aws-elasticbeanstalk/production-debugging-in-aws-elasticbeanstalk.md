@@ -17,15 +17,21 @@ Team Lead at SERMO
 
 ![inline 240%](aeb-architecture2.png)
 
-^ Taken from http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.concepts.architecture.html
+^ 1 box = one rails server
+
+^ Like Heroku. Show of hands?
+
+^ Way less expensive
+
+^ DB is AWS RDS
 
 ---
 
 # Application Design
 
-* AWS ElasticBeanstalk, i.e. Heroku except less expensive
-* Two apps
+* Two Ruby on Rails apps (hosted with EB)
 * JSON API secured by HTTPS and HTTP basic authentication
+  * We'll talk about this later
 
 ---
 
@@ -41,23 +47,6 @@ Smoke testing the app before releasing it to users resulted in a lot of smoke.
 
 ---
 
-# Request flow
-
-Mental model is critical for debugging!
-
-![inline](request-flow.png)
-
----
-
-# Common Tools
-
-* SSH
-* Rails and nginx logs
-* Rails console
-* curl
-
----
-
 # Symptoms
 
 Log in. Go to projects. User see '500' page:
@@ -66,10 +55,35 @@ Log in. Go to projects. User see '500' page:
 
 ---
 
+# Request flow
+
+Mental model is critical for debugging!
+
+![inline](request-flow.png)
+
+^ Make sure that everyone understands what's going on before moving on.
+
+---
+
+# Common Tools
+
+* SSH for logging in
+* Rails and nginx logs for history
+* Rails console to interact with the app
+* curl to easily replay requests
+
+^ Critical tools are listed above, learn them well.
+
+---
+
+
 # Debugging
 
+* Recreating the error
 * Exception tracker
 * Logs
+
+^ Don't talk about exception tracker and logs in detail
 
 ---
 
@@ -113,7 +127,9 @@ Where from: `json_api_client` gem.
 
 ![inline](request-flow-not-authorized.png)
 
-^ Googling it revealed that it maps to a http status code - 401 unauthorized (next slide).
+^ Googling it revealed that it maps to a http status code - 401 unauthorized.
+
+^ Who is familiar with http status codes?
 
 ---
 
@@ -136,6 +152,8 @@ Username and password are base64 encoded like this:
 `Base64.encode64(username + ':' + password)`
 
 In JavaScript: `btoa(username + ':' + password)`
+
+^ Ask people to look up base64 encoding later.
 
 ---
 
@@ -213,6 +231,8 @@ JNUTJwaWNXcFg=\n"
 Base64.strict_encode64('mysecretusername:TXlTZWNyZXRVc2VybmFt...')
 ```
 
+^ Why didn't this happen in staging? username and password were shorter.
+
 ---
 
 # Smoke test!
@@ -238,4 +258,8 @@ New systems, feature, and bugs should have checklists!
 
 ---
 
-# Questions?
+# The end.
+
+# Any Questions?
+
+^ One image from http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.concepts.architecture.html
