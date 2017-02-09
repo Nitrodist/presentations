@@ -1,0 +1,17 @@
+/-----------------\                /-----------------\                             /-----------------\
+| User's Browser  | GET /projects  | Rails app #1    | GET /projects?user_id≈123   | Rails app #2    |
+|                 | with cookie    | cBLU            | with http basic auth        | cCCE            |
+| cGRE            |--------------->| o Responds with |---------------------------->| o Responds with |
+| o user_id=123   |                |   HTML          |                             |   JSON          |
+|                 | Projects HTML  | o Requests with | Projects JSON               |                 |
+|                 |<---------------|   HTTP + JSON   |<----------------------------|                 |
+|                 |                |                 |                             |                 |
+\-----------------/                \-----------------/                             \-----------------/
+
+
+
+
+
+
+
+
