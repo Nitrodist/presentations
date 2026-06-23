@@ -8,9 +8,9 @@ generate a slideshow. I guess it's still an app (writing this message in 2026
 after using the Deckset app 2015 through 2017 so I'm dating myself a bit here -
 and you, dear reader) 😅
 
-### [Stupid command line tricks](2015-08-21-stupid-command-line-tricks/stupid_command_line_tricks.pdf)
+## [Stupid command line tricks](2015-08-21-stupid-command-line-tricks/stupid_command_line_tricks.pdf)
 
-## 2015-08-21
+### 2015-08-21
 
 This presentation I gave at a talk night for the Toronto Ruby Brigade. It
 focused on using the command line (e.g. a bash or zsh shell) effectively.
@@ -91,7 +91,9 @@ thing, it is, and was, a massive waste of time given the headache of
 maintaining one for few gains. In fact, you were signing yourself up for
 downtime, haha.
 
-- 2017-02-07 - [Production Debugging in AWS Elastic Beanstalk](2017-02-07-production-debugging-in-aws-elasticbeanstalk/production-debugging-in-aws-elasticbeanstalk.pdf)
+## [Production Debugging in AWS Elastic Beanstalk](2017-02-07-production-debugging-in-aws-elasticbeanstalk/production-debugging-in-aws-elasticbeanstalk.pdf)
+
+### 2017-02-07
 
 This talk I gave walks through debugging a Ruby on Rails app and a second Ruby
 on Rails app, the techniques used, technologies, commands, etc.
