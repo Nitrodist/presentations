@@ -30,9 +30,10 @@ programmers old and new about software development techniques with pair
 programming and test driven development at the Toronto Ruby Brigade in November
 of 2015.
 
-The goal of it was to implement the rules of Conway's Game of Life and then
-compare and contrast the techniques that people actually used with ones that
-David and myself knew and taught.
+The goal of it was to implement the rules of [Conway's Game of
+Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) and then compare
+and contrast the techniques that people actually used with ones that David and
+myself knew and taught.
 
 I had a lot of experience with Conway's Game of Life at other code retreats and
 workshops so I suggested it to David that we use it for our hack night's
